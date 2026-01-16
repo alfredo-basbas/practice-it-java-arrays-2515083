@@ -1,21 +1,37 @@
+import java.util.Arrays;
+
 public class App {
 
-  public static void printTriangle(Object[] arr) {
-    for (int i = 0; i <= arr.length - 1; i++) {
-      String msg = "";
-      for (int k = 0; k <= i; k++) {
-        // System.out.println("INDEX " + k);
-        msg = msg + arr[k];
-      }
-      System.out.println(msg);
+  public static Object[] rotateRight(Object[] arr) {
+    Object[] result = new Object[arr.length];
+    // Result[] -> {null,null,null,null,null}
+    for (int i = 0; i < arr.length; i++) {
+      result[(i + 1) % arr.length] = arr[i];
     }
+    return result;
   }
 
   public static void main(String args[]) {
-    printTriangle(new Integer[] { 1, 2, 3, 4 });
-    printTriangle(new Character[] { 'A', 'B', 'C', 'D', 'E' });
-    printTriangle(new String[] {});
-    printTriangle(new String[] { "Hello" });
-    printTriangle(new String[] { "Hello", "There", "Friend" });
+    Object[] arr = new Integer[] { 1, 2, 3, 4, 5 };
+
+    arr = rotateRight(arr);
+    System.out.println(Arrays.toString(arr));
+    arr = rotateRight(arr);
+    System.out.println(Arrays.toString(arr));
+    arr = rotateRight(arr);
+    System.out.println(Arrays.toString(arr));
+    arr = rotateRight(arr);
+    System.out.println(Arrays.toString(arr));
+    arr = rotateRight(arr);
+    System.out.println(Arrays.toString(arr));
+
+    Object[] arr2 = new String[] { "Hello", "there", "my friend" };
+
+    arr2 = rotateRight(arr2);
+    System.out.println(Arrays.toString(arr2));
+    arr2 = rotateRight(arr2);
+    System.out.println(Arrays.toString(arr2));
+    arr2 = rotateRight(arr2);
+    System.out.println(Arrays.toString(arr2));
   }
 }
