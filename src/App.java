@@ -2,36 +2,62 @@ import java.util.Arrays;
 
 public class App {
 
-  public static Object[] rotateRight(Object[] arr) {
-    Object[] result = new Object[arr.length];
-    // Result[] -> {null,null,null,null,null}
+  public static void moveZerosToTheEnd(int[] arr) {
+    int count = 0;
+
     for (int i = 0; i < arr.length; i++) {
-      result[(i + 1) % arr.length] = arr[i];
+      if (arr[i] != 0) {
+        arr[count] = arr[i];
+        count++;
+      }
     }
-    return result;
+    while (count < arr.length) {
+      arr[count] = 0;
+      count++;
+    }
   }
 
-  public static void main(String args[]) {
-    Object[] arr = new Integer[] { 1, 2, 3, 4, 5 };
+  public static void main(String[] args) {
+    int[] arr = new int[] { 1, 1, 0, 0, 0, 1, 0 };
+    System.out.println(Arrays.toString(arr));
+    moveZerosToTheEnd(arr);
+    System.out.println(Arrays.toString(arr));
+    System.out.println();
 
-    arr = rotateRight(arr);
-    System.out.println(Arrays.toString(arr));
-    arr = rotateRight(arr);
-    System.out.println(Arrays.toString(arr));
-    arr = rotateRight(arr);
-    System.out.println(Arrays.toString(arr));
-    arr = rotateRight(arr);
-    System.out.println(Arrays.toString(arr));
-    arr = rotateRight(arr);
-    System.out.println(Arrays.toString(arr));
+    int[] arr2 = new int[] { 0, 0, 1, 2, 3, 0, 4 };
+    System.out.println(Arrays.toString(arr2));
+    moveZerosToTheEnd(arr2);
+    System.out.println(Arrays.toString(arr2));
+    System.out.println();
 
-    Object[] arr2 = new String[] { "Hello", "there", "my friend" };
+    int[] arr3 = new int[] { 0, 0 };
+    System.out.println(Arrays.toString(arr3));
+    moveZerosToTheEnd(arr3);
+    System.out.println(Arrays.toString(arr3));
+    System.out.println();
 
-    arr2 = rotateRight(arr2);
-    System.out.println(Arrays.toString(arr2));
-    arr2 = rotateRight(arr2);
-    System.out.println(Arrays.toString(arr2));
-    arr2 = rotateRight(arr2);
-    System.out.println(Arrays.toString(arr2));
+    int[] arr4 = new int[] { 2, 9, 1 };
+    System.out.println(Arrays.toString(arr4));
+    moveZerosToTheEnd(arr4);
+    System.out.println(Arrays.toString(arr4));
+    System.out.println();
+
+    int[] arr5 = new int[] { 0, 10, 0 };
+    System.out.println(Arrays.toString(arr5));
+    moveZerosToTheEnd(arr5);
+    System.out.println(Arrays.toString(arr5));
+    System.out.println();
+
+    int[] arr6 = new int[] { 3, 0, 0 };
+    System.out.println(Arrays.toString(arr6));
+    moveZerosToTheEnd(arr6);
+    System.out.println(Arrays.toString(arr6));
+    System.out.println();
+
+    int[] arr7 = new int[] {};
+    System.out.println(Arrays.toString(arr7));
+    moveZerosToTheEnd(arr7);
+    System.out.println(Arrays.toString(arr7));
+    System.out.println();
   }
 }
