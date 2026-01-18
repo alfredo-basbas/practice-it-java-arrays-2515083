@@ -1,55 +1,41 @@
-import java.util.Arrays;
-
 public class App {
 
-  public static void reverse(int[] arr) {
-    int a = 0;
-    int count = arr.length;
-    for (int i = 0; i < arr.length/2; i++) {
-      a = arr[i];
-      arr[i] = arr[count - 1];
-      arr[count - 1] = a;
-      count--;
-      // System.out.println("COUNT " + count);
-      // System.out.println("INDEX " + i);
-    }
-  }
+  public static void main(String[] args) {
 
-  public static void main(String args[]) {
-    int[] arr = new int[] {};
-    System.out.println(Arrays.toString(arr));
-    reverse(arr);
-    System.out.println(Arrays.toString(arr));
+    CustomArrayList<Integer> customArrayList = new CustomArrayList<>();
+    System.out.println(customArrayList.size());
+
+    customArrayList.add(1);
+    System.out.println(customArrayList.get(0));
+    System.out.println(customArrayList.size());
+
+    customArrayList.add(2);
+    System.out.println(customArrayList.get(1));
+    System.out.println(customArrayList.size());
+
+    customArrayList.add(3);
+    System.out.println(customArrayList.get(2));
+    System.out.println(customArrayList.size());
+
     System.out.println();
 
-    int[] arr2 = new int[] { 1 };
-    System.out.println(Arrays.toString(arr2));
-    reverse(arr2);
-    System.out.println(Arrays.toString(arr2));
-    System.out.println();
+    CustomArrayList<String> customArrayList2 = new CustomArrayList<>();
+    System.out.println(customArrayList2.size());
 
-    int[] arr3 = new int[] { 1, 2, 3 };
-    System.out.println(Arrays.toString(arr3));
-    reverse(arr3);
-    System.out.println(Arrays.toString(arr3));
-    System.out.println();
+    customArrayList2.add("Hi");
+    System.out.println(customArrayList2.get(0));
+    System.out.println(customArrayList2.size());
 
-    int[] arr4 = new int[] { 1, 2, 3, 4, 5 };
-    System.out.println(Arrays.toString(arr4));
-    reverse(arr4);
-    System.out.println(Arrays.toString(arr4));
-    System.out.println();
+    customArrayList2.add("Hello");
+    System.out.println(customArrayList2.get(1));
+    System.out.println(customArrayList2.size());
 
-    int[] arr5 = new int[] { 9, 3, 4, 1 };
-    System.out.println(Arrays.toString(arr5));
-    reverse(arr5);
-    System.out.println(Arrays.toString(arr5));
-    System.out.println();
+    customArrayList2.add("Hey");
+    System.out.println(customArrayList2.get(2));
+    System.out.println(customArrayList2.size());
 
-    int[] arr6 = new int[] { 1, 2, 3, 4, 5, 6, 7 };
-    System.out.println(Arrays.toString(arr6));
-    reverse(arr6);
-    System.out.println(Arrays.toString(arr6));
-    System.out.println();
+    customArrayList2.add("Good morning");
+    System.out.println(customArrayList2.get(3));
+    System.out.println(customArrayList2.size());
   }
 }
